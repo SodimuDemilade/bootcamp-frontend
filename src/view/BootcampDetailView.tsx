@@ -117,7 +117,7 @@ export function BootcampDetailView() {
 
                     <div className="heroRating">
                         <Rating rating={bootcamp.averageRating}/>
-                        <span>{bootcamp.averageRating.toFixed(2)} (120 reviews)</span>
+                        <span>{bootcamp.averageRating?.toFixed(2)} (120 reviews)</span>
                     </div>
 
                     <a href={bootcamp.website} className="heroLink">

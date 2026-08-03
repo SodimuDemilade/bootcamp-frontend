@@ -70,7 +70,7 @@ export const BootcampsSection = ({
 
                 <MetricCard
                     title="Average Rating"
-                    value={Number(averageRating.toFixed(1))}
+                    value={Number(averageRating?.toFixed(1))}
                 />
             </div>
 
