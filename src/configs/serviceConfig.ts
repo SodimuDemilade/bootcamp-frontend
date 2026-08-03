@@ -31,7 +31,7 @@ const handleApiError = (
     const data = error.data as BaseResponse;
     const defaultMessage = "An unexpected error occurred";
     const message = data?.responseMessage || defaultMessage;
-    console.log("message", message);
+    // console.log("message", message);
     const responseCode = data?.responseCode;
     // Skip error handling if this response code is expected by the caller
 

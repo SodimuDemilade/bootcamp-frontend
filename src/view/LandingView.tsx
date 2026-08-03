@@ -24,89 +24,9 @@ export const LandingView = () => {
         navigate(RouteConstant.dashboard.bootcampList.path)
     }
 
-    // const allUsers = ["John", "Jane", "Mike"];
-    // const [users, setUsers] = useState(["John", "Jane", "Mike"]);
-    // const [input, setInput] = useState("");
-    // const [debounced, setDebounced] = useState("");
-    // const [tasks, setTasks] = useState<Task[]>([]);
-    // const [count, setCount] = useState(1);
-    // const [task, setTask] = useState("");
-    // const [loading, setLoading] = useState(false);
-    //
-    // useEffect(() => {
-    //     const timeout = setTimeout(() => {
-    //         setDebounced(input);
-    //     }, 500);
-    //
-    //     return () => clearTimeout(timeout);
-    // }, [input]);
-    //
-    // useEffect(() => {
-    //     if (debounced) {
-    //         setUsers(allUsers.filter(user => user.toLowerCase().includes(input.toLowerCase())));
-    //     } else {
-    //         setUsers(allUsers);
-    //     }
-    // }, [debounced]);
-    //
-    // const addTask = (taskName: string) => {
-    //     setTasks((prev) => [...prev, {id: count, name: taskName, status: "completed"}]);
-    //     setCount((prev) => prev + 1);
-    // }
-    //
-    // const removeTask = (taskId: number) => {
-    //     setTasks((prev) => prev.filter(task => task.id != taskId));
-    // }
-    //
-    // const checkTask = (checked: boolean, taskId: number) => {
-    //     const state = checked ? "completed" : "pending";
-    //     setTasks((prev) => {
-    //         return prev.map((task) => {
-    //             return task.id == taskId ? {...task, status: state} : task
-    //         })
-    //     })
-    // }
-    //
-    // const fetchData = async () => {
-    //     setLoading(true);
-    //     try {
-    //         const response = await fetch("https://usersdata.com");
-    //         if (!response.ok) {
-    //             throw new Error("Failed to fetch data");
-    //         }
-    //         const data = await response.json();
-    //         console.log(data);
-    //     } catch (error) {
-    //         console.log(error);
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // }
-
 
     return (
         <div className={"mainContent"}>
-            {/*<div>*/}
-            {/*    <input value={input} onChange={(e) => setInput(e.target.value)}/>*/}
-            {/*    {users.map((user) => (*/}
-            {/*        <p>{user}</p>*/}
-            {/*    ))}*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    <input value={task} onChange={(e) => setTask(e.target.value)}/>*/}
-            {/*    <button onClick={() => addTask(task)}>Add task</button>*/}
-            {/*    {tasks.map((task) => (*/}
-            {/*        <div style={{display: "flex", gap: '5px'}}>*/}
-            {/*            <p>{task.name}</p>*/}
-            {/*            <input type={"checkbox"} checked={task.status === "completed"}*/}
-            {/*                   onChange={(e) => checkTask(e.target.checked, task.id)}/>*/}
-            {/*            <button onClick={() => removeTask(task.id)}>Remove</button>*/}
-            {/*        </div>*/}
-            {/*    ))}*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    <button onClick={() => fetchData()}>Fetch data</button>*/}
-            {/*</div>*/}
             <section className={"hero"}>
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px'}}>
                     <div className={"heroTag"}>

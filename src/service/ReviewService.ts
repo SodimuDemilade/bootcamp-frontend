@@ -24,8 +24,8 @@ export const ReviewService = BaseService.appClient.injectEndpoints({
             }),
             onQueryStarted: async (arg, {queryFulfilled}) => {
                 try {
-                    const {data} = await queryFulfilled;
-                    console.log("data:", data);
+                    await queryFulfilled;
+                    // console.log("data:", data);
                 } catch (error) {
                     // Handle login error
                     console.error('Reviews Fetch failed:', error, arg);

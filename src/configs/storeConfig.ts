@@ -8,10 +8,17 @@ import {rootReducer} from "@/store";
 
 // Non-persisted reducers (API cache shouldn't be persisted)
 const nonPersistedReducers = [BaseService.appClient.reducerPath];
+const persistStorage =
+    (
+        storage as typeof storage & {
+            default?: typeof storage;
+        }
+    ).default ?? storage;
+
 const persistConfig = {
-    key: 'root',
-    storage: storage,
-    blacklist: nonPersistedReducers, // Don't persist API cache
+    key: "root",
+    storage: persistStorage,
+    blacklist: nonPersistedReducers,
 };
 
 const persistedReducer = persistReducer<ReturnType<typeof rootReducer>>(

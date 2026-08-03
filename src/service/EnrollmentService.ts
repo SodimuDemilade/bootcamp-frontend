@@ -41,8 +41,8 @@ export const EnrollmentService = BaseService.appClient.injectEndpoints({
             }),
             onQueryStarted: async (arg, {queryFulfilled}) => {
                 try {
-                    const {data} = await queryFulfilled;
-                    console.log("data:", data);
+                    await queryFulfilled;
+                    // console.log("data:", data);
                 } catch (error) {
                     // Handle login error
                     console.error('Enrollments Fetch failed:', error, arg);
