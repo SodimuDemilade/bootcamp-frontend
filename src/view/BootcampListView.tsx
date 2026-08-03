@@ -29,10 +29,8 @@ export const BootcampListView = () => {
         let filtered = baseState.bootcamps;
         if (category.title) {
             filtered = filtered.filter(bootcamp => bootcamp.category.some(cat => cat.toLowerCase() === category?.title.toLowerCase()));
-            console.log("filtered", filtered, category)
         }
         if (duration) {
-            console.log("im in duration", duration);
             const durationSelectedFirst = Number(duration.split("-")[0]);
             const durationSelectedSecond = Number(duration.split("-")[1]);
             if (durationSelectedSecond == 0) {
@@ -55,7 +53,6 @@ export const BootcampListView = () => {
             }
         }
         if (price) {
-            console.log("im in price", price[0], price[1])
             filtered = filtered.filter(bootcamp => (bootcamp.averageCost || 0) >= price[0] && (bootcamp.averageCost || 0) <= price[1]);
         }
         if (rating) {
