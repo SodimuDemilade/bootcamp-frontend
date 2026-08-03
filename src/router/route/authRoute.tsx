@@ -11,7 +11,7 @@ export const authRoute: RouteType[] = [
         element: <SignUpView/>,
         metadata: {
             isProtected: false,
-            hasSideBar: false,
+            // hasSideBar: false,
             subtitle: "Create your account.",
             isAuth: true
         },
@@ -22,7 +22,7 @@ export const authRoute: RouteType[] = [
         element: <LoginView/>,
         metadata: {
             isProtected: false,
-            hasSideBar: false,
+            // hasSideBar: false,
             subtitle: "Login to your account.",
             isAuth: true
         },

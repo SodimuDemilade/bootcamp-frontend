@@ -3,14 +3,14 @@ import {FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, RE
 import storage from "redux-persist/lib/storage";
 import {setupListeners} from "@reduxjs/toolkit/query";
 import {BaseService} from "./serviceConfig";
-import {rootReducer} from "../store";
+import {rootReducer} from "@/store";
 
 
 // Non-persisted reducers (API cache shouldn't be persisted)
 const nonPersistedReducers = [BaseService.appClient.reducerPath];
 const persistConfig = {
     key: 'root',
-    storage: storage.default,
+    storage: storage,
     blacklist: nonPersistedReducers, // Don't persist API cache
 };
 

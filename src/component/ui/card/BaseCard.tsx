@@ -4,10 +4,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import type {CardType} from "../../../util/type";
+import type {CardType} from "@/util/type";
 
 export default function BaseCard({
-                                     imageUrl,
                                      title,
                                      description,
                                      primaryButtonText,

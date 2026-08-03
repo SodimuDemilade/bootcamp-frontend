@@ -57,7 +57,7 @@ export const AdminBootcampsView = () => {
 
             {showBootcampModal && (
                 <BootcampModal
-                    open={showBootcampModal}
+                    // open={showBootcampModal}
                     loading={creatingBootcamp}
                     onClose={() => setShowBootcampModal(false)}
                     onSubmit={handleCreateBootcamp}
