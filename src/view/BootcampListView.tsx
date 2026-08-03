@@ -11,10 +11,10 @@ import {Bootcamp} from "@/model/response/bootcamp/BootcampResponse.ts";
 
 
 export const BootcampListView = () => {
-    const [price, setPrice] = useState<number[]>([500, 1500]);
+    const [price, setPrice] = useState<number[]>([0, 13000]);
     // const [location, setLocation] = useState<number>(50);
     const [duration, setDuration] = useState('');
-    const [rating, setRating] = useState<string>('0');
+    const [rating, setRating] = useState<string>('');
     const [category, setCategory] = useState<{ title: string }>({title: ""});
     const baseState = useSelector((state: RootState) => state.base);
     const [bootcamps, setBootcamps] = useState<Bootcamp[]>(baseState.bootcamps);
@@ -29,8 +29,10 @@ export const BootcampListView = () => {
         let filtered = baseState.bootcamps;
         if (category.title) {
             filtered = filtered.filter(bootcamp => bootcamp.category.some(cat => cat.toLowerCase() === category?.title.toLowerCase()));
+            console.log("filtered", filtered, category)
         }
         if (duration) {
+            console.log("im in duration", duration);
             const durationSelectedFirst = Number(duration.split("-")[0]);
             const durationSelectedSecond = Number(duration.split("-")[1]);
             if (durationSelectedSecond == 0) {
@@ -53,7 +55,8 @@ export const BootcampListView = () => {
             }
         }
         if (price) {
-            filtered = filtered.filter(bootcamp => bootcamp.averageCost >= price[0] && bootcamp.averageCost <= price[1]);
+            console.log("im in price", price[0], price[1])
+            filtered = filtered.filter(bootcamp => (bootcamp.averageCost || 0) >= price[0] && (bootcamp.averageCost || 0) <= price[1]);
         }
         if (rating) {
             filtered = filtered.filter((bootcamp) => {

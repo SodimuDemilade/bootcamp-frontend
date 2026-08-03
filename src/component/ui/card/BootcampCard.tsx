@@ -70,7 +70,7 @@ export default function BootcampCard({bootcamp}: { bootcamp: Bootcamp }) {
                     </div>
 
                     <div className="bootcampPrice">
-                        ${StringUtil.handleCurrencyFormatter(String(bootcamp.averageCost))}
+                        {bootcamp.averageCost ? `$ ${StringUtil.handleCurrencyFormatter(String(bootcamp.averageCost))}` : 'No course yet'}
                     </div>
 
                 </div>

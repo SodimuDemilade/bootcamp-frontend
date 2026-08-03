@@ -20,8 +20,8 @@ export const RangeSlider = ({value, setValue}: RangeSliderType) => {
                 size={"small"}
                 getAriaLabel={() => 'Price range'}
                 value={value}
-                min={500}
-                max={5000}
+                min={0}
+                max={13000}
                 onChange={handleChange}
                 valueLabelDisplay="auto"
                 getAriaValueText={valuetext}
