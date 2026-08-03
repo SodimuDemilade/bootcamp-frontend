@@ -99,20 +99,22 @@ export default function UserView() {
                     <h2 className="sectionTitle">Saved Bootcamps</h2>
 
                     <div className="savedGrid">
-                        {savedBootcamps?.map(savedBootcamp => {
-                            const bootcamp = baseState.bootcamps?.find(item => item.id == savedBootcamp.bootcamp);
-                            return (
-                                <div className="savedCard" key={bootcamp?.id}>
-                                    <div>
-                                        <span className="tag">❤️ Saved</span>
-                                        <h3>{bootcamp?.name}</h3>
-                                        <p>Added {getDays(savedBootcamp!.createdAt)}</p>
-                                    </div>
+                        {savedBootcamps?.length == 0 ? <p>No Saved Bootcamps</p> :
+                            savedBootcamps?.map(savedBootcamp => {
+                                const bootcamp = baseState.bootcamps?.find(item => item.id == savedBootcamp.bootcamp);
+                                return (
+                                    <div className="savedCard" key={bootcamp?.id}>
+                                        <div>
+                                            <span className="tag">❤️ Saved</span>
+                                            <h3>{bootcamp?.name}</h3>
+                                            <p>Added {getDays(savedBootcamp!.createdAt)}</p>
+                                        </div>
 
-                                    <button className="primaryBtn">Enroll</button>
-                                </div>
-                            )
-                        })}
+                                        <button className="primaryBtn">Enroll</button>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </section>
 
@@ -133,15 +135,15 @@ export default function UserView() {
                 </section>
 
                 {/* Activity */}
-                <section>
-                    <h2 className="sectionTitle">Recent Activity</h2>
+                {/*<section>*/}
+                {/*    <h2 className="sectionTitle">Recent Activity</h2>*/}
 
-                    <div className="activityBox">
-                        <p>You enrolled in Backend Engineering</p>
-                        <p>You saved Data Science Bootcamp</p>
-                        <p>You reviewed React Accelerator</p>
-                    </div>
-                </section>
+                {/*    <div className="activityBox">*/}
+                {/*        <p>You enrolled in Backend Engineering</p>*/}
+                {/*        <p>You saved Data Science Bootcamp</p>*/}
+                {/*        <p>You reviewed React Accelerator</p>*/}
+                {/*    </div>*/}
+                {/*</section>*/}
 
             </main>
         </div>
