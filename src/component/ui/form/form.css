@@ -1,0 +1,108 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.submitButton {
+    border-radius: 10px;
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+.roleSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.roleTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.roleOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.roleCard {
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+
+    padding: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    background: white;
+}
+
+.roleCard:hover {
+    border-color: #4F46E5;
+    background: #F8FAFC;
+}
+
+.activeRole {
+    border-color: #4F46E5;
+    background: #EEF2FF;
+}
+
+.roleHeading {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.roleDescription {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #64748B;
+}
+
+.roleRadio {
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+    border: 2px solid #CBD5E1;
+
+    position: relative;
+}
+
+.activeRole .roleRadio {
+    border-color: #4F46E5;
+}
+
+/*It creates a virtual element inside the selected element — without adding extra HTML.*/
+.activeRole .roleRadio::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #4F46E5;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,244 @@
+.userView {
+    display: flex;
+    height: 100%;
+    /*overflow: auto;*/
+    background: #F8FAFC;
+    color: #0F172A;
+}
+
+.sidebar {
+    width: 260px;
+    background: white;
+    border-right: 1px solid #E2E8F0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4F46E5;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navItem {
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #64748B;
+}
+
+.navItem:hover {
+    background: #F1F5F9;
+}
+
+.navItem.active {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+.logout {
+    margin-top: auto;
+    color: #EF4444;
+    cursor: pointer;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    height: 100%;
+    overflow: auto;
+}
+
+/* HERO */
+.userHero {
+    background: linear-gradient(135deg, #4F46E5, #6366F1);
+    color: white;
+    padding: 28px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userHero h1 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.userHero p {
+    opacity: 0.85;
+}
+
+.userHeroStats {
+    display: flex;
+    gap: 20px;
+}
+
+.userHeroStat strong {
+    display: block;
+    font-size: 18px;
+}
+
+.userHeroStat span {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* STATS GRID */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.statCard {
+    background: white;
+    border: 1px solid #E2E8F0;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.statCard p {
+    color: #64748B;
+    font-size: 13px;
+}
+
+.statCard h3 {
+    margin-top: 6px;
+    font-size: 20px;
+}
+
+/* SECTION TITLE */
+.sectionTitle {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+/* CONTINUE LEARNING */
+.horizontalScroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.userCourseCard {
+    min-width: 260px;
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.courseImage {
+    height: 120px;
+    width: 100%;
+    background: #F1F5F9;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.progressBar {
+    height: 6px;
+    background: #E2E8F0;
+    border-radius: 50px;
+    margin: 10px 0;
+}
+
+.progressFill {
+    width: 68%;
+    height: 100%;
+    background: #4F46E5;
+    border-radius: 50px;
+}
+
+/* BUTTONS */
+.primaryBtn {
+    background: #4F46E5;
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.primaryBtn:hover {
+    background: #4338CA;
+}
+
+.linkBtn {
+    background: none;
+    border: none;
+    color: #4F46E5;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+/* SAVED */
+.savedGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.savedCard {
+    background: white;
+    border: 1px solid #E2E8F0;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tag {
+    font-size: 12px;
+    color: #EF4444;
+}
+
+/* RECOMMENDED */
+.recommendedGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.recCard {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.recImage {
+    height: 100px;
+    background: #F1F5F9;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* ACTIVITY */
+.activityBox {
+    background: white;
+    border: 1px solid #E2E8F0;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #475569;
+}

@@ -1,0 +1,77 @@
+.authLayout {
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.authCard {
+    /*background: #FFFFFF;*/
+    border-radius: 10px;
+    padding: 60px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.authImageWrapper {
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: flex-end;*/
+
+    /*margin-top: auto;*/
+    width: 50%;
+    height: 100%;
+}
+
+.authImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.authRight {
+    padding: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.authRightContent {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.authHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 5PX;
+}
+
+.authTitle {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.authSubtitle {
+    color: #64748B;
+    font-size: 14px;
+}
+
+.authAction {
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+}

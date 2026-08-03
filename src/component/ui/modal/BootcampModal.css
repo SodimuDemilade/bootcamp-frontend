@@ -1,0 +1,814 @@
+.create-bootcamp-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(15, 23, 42, 0.68);
+    backdrop-filter: blur(6px);
+
+    animation: createBootcampFadeIn 0.2s ease;
+}
+
+.create-bootcamp-modal {
+    width: min(880px, 100%);
+    max-height: 92vh;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 24px;
+
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.24),
+    0 12px 30px rgba(15, 23, 42, 0.12);
+
+    animation: createBootcampSlideIn 0.25s ease;
+}
+
+/* Header */
+
+.create-bootcamp-header {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 26px 30px 22px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.create-bootcamp-header h2 {
+    margin: 2px 0 6px;
+
+    color: #0f172a;
+
+    font-size: 1.55rem;
+    line-height: 1.2;
+    font-weight: 750;
+}
+
+.create-bootcamp-header p:not(.create-bootcamp-eyebrow) {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.create-bootcamp-eyebrow {
+    margin: 0;
+
+    color: #4f46e5;
+
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.create-bootcamp-close {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    color: #64748b;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.create-bootcamp-close:hover:not(:disabled) {
+    color: #0f172a;
+    background: #f1f5f9;
+    transform: rotate(4deg);
+}
+
+.create-bootcamp-close:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Stepper */
+
+.create-bootcamp-stepper {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px 30px;
+
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.create-bootcamp-step {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: #94a3b8;
+}
+
+.create-bootcamp-step > span {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: #64748b;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 50%;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.create-bootcamp-step strong,
+.create-bootcamp-step small {
+    display: block;
+}
+
+.create-bootcamp-step strong {
+    color: #64748b;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.create-bootcamp-step small {
+    margin-top: 2px;
+
+    color: #94a3b8;
+
+    font-size: 0.74rem;
+}
+
+.create-bootcamp-step.active > span {
+    color: #ffffff;
+    background: #4f46e5;
+    border-color: #4f46e5;
+}
+
+.create-bootcamp-step.active strong {
+    color: #1e293b;
+}
+
+.create-bootcamp-step-line {
+    height: 2px;
+    flex: 1;
+
+    margin: 0 20px;
+
+    background: #cbd5e1;
+
+    transition: background 0.2s ease;
+}
+
+.create-bootcamp-step-line.active {
+    background: #4f46e5;
+}
+
+/* Form and scrolling content */
+
+.create-bootcamp-form {
+    min-height: 0;
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.create-bootcamp-content {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 28px 30px 34px;
+
+    background: #ffffff;
+}
+
+.create-bootcamp-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.create-bootcamp-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 999px;
+}
+
+.create-bootcamp-step-content {
+    animation: createBootcampContentIn 0.2s ease;
+}
+
+/* Section headings */
+
+.create-bootcamp-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 22px;
+}
+
+.create-bootcamp-section-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: #4f46e5;
+    background: #eef2ff;
+    border: 1px solid #e0e7ff;
+    border-radius: 13px;
+}
+
+.create-bootcamp-section-heading h3 {
+    margin: 0 0 3px;
+
+    color: #0f172a;
+
+    font-size: 1rem;
+    font-weight: 750;
+}
+
+.create-bootcamp-section-heading p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 0.83rem;
+}
+
+.create-bootcamp-divider {
+    height: 1px;
+
+    margin: 30px 0;
+
+    background: #e2e8f0;
+}
+
+/* Fields */
+
+.create-bootcamp-field {
+    margin-bottom: 20px;
+}
+
+.create-bootcamp-field:last-child {
+    margin-bottom: 0;
+}
+
+.create-bootcamp-field label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.create-bootcamp-field label span {
+    margin-left: 3px;
+
+    color: #ef4444;
+}
+
+.create-bootcamp-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.create-bootcamp-label-row small {
+    color: #94a3b8;
+
+    font-size: 0.75rem;
+}
+
+.create-bootcamp-field input,
+.create-bootcamp-field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    color: #0f172a;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 11px;
+    font: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.create-bootcamp-field textarea {
+    min-height: 128px;
+
+    line-height: 1.55;
+
+    resize: vertical;
+}
+
+.create-bootcamp-field input::placeholder,
+.create-bootcamp-field textarea::placeholder {
+    color: #94a3b8;
+}
+
+.create-bootcamp-field input:hover,
+.create-bootcamp-field textarea:hover {
+    border-color: #94a3b8;
+}
+
+.create-bootcamp-field input:focus,
+.create-bootcamp-field textarea:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.11);
+}
+
+.create-bootcamp-field input.has-error,
+.create-bootcamp-field textarea.has-error,
+.create-bootcamp-career-input.has-error {
+    border-color: #ef4444;
+}
+
+.create-bootcamp-field input.has-error:focus,
+.create-bootcamp-field textarea.has-error:focus {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.create-bootcamp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.create-bootcamp-error {
+    margin: 7px 0 0;
+
+    color: #dc2626;
+
+    font-size: 0.77rem;
+    font-weight: 500;
+}
+
+.create-bootcamp-help {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #94a3b8;
+
+    font-size: 0.75rem;
+    text-align: left;
+}
+
+/* Career tags */
+
+.create-bootcamp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-bottom: 12px;
+}
+
+.create-bootcamp-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 9px 7px 12px;
+
+    color: #4338ca;
+    background: #eef2ff;
+    border: 1px solid #e0e7ff;
+    border-radius: 999px;
+
+    font-size: 0.78rem;
+    font-weight: 650;
+}
+
+.create-bootcamp-tag button {
+    width: 21px;
+    height: 21px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    color: #6366f1;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.create-bootcamp-tag button:hover {
+    color: #ffffff;
+    background: #6366f1;
+}
+
+.create-bootcamp-career-input {
+    display: flex;
+    align-items: stretch;
+
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 11px;
+
+    transition: border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.create-bootcamp-career-input:focus-within {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.11);
+}
+
+.create-bootcamp-career-input input {
+    flex: 1;
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.create-bootcamp-career-input input:hover,
+.create-bootcamp-career-input input:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.create-bootcamp-career-input button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 5px;
+    padding: 0 15px;
+    color: #4338ca;
+    background: #eef2ff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s ease,
+    background 0.2s ease;
+}
+
+.create-bootcamp-career-input button:hover:not(:disabled) {
+    color: #ffffff;
+    background: #4f46e5;
+}
+
+.create-bootcamp-career-input button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+/* Features */
+
+.create-bootcamp-feature-list {
+    overflow: hidden;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+}
+
+.create-bootcamp-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.create-bootcamp-toggle-row:last-child {
+    border-bottom: none;
+}
+
+.create-bootcamp-toggle-row strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #1e293b;
+
+    font-size: 0.88rem;
+}
+
+.create-bootcamp-toggle-row p {
+    max-width: 570px;
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+/* Switch */
+
+.create-bootcamp-switch {
+    position: relative;
+    width: 48px;
+    height: 27px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.create-bootcamp-switch input {
+    width: 0;
+    height: 0;
+
+    opacity: 0;
+}
+
+.create-bootcamp-slider {
+    position: absolute;
+    inset: 0;
+
+    background: #cbd5e1;
+    border-radius: 999px;
+
+    transition: background 0.22s ease;
+}
+
+.create-bootcamp-slider::before {
+    content: "";
+
+    position: absolute;
+    top: 3px;
+    left: 3px;
+
+    width: 21px;
+    height: 21px;
+
+    background: #ffffff;
+    border-radius: 50%;
+
+    box-shadow: 0 2px 5px rgba(15, 23, 42, 0.22);
+
+    transition: transform 0.22s ease;
+}
+
+.create-bootcamp-switch input:checked + .create-bootcamp-slider {
+    background: #4f46e5;
+}
+
+.create-bootcamp-switch
+input:checked
++ .create-bootcamp-slider::before {
+    transform: translateX(21px);
+}
+
+/* Footer */
+
+.create-bootcamp-footer {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+
+    padding: 18px 30px;
+
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+
+    box-shadow: 0 -8px 22px rgba(15, 23, 42, 0.035);
+}
+
+.create-bootcamp-secondary-button,
+.create-bootcamp-primary-button {
+    min-height: 43px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.create-bootcamp-secondary-button {
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+}
+
+.create-bootcamp-secondary-button:hover:not(:disabled) {
+    color: #0f172a;
+    background: #f8fafc;
+    border-color: #94a3b8;
+}
+
+.create-bootcamp-primary-button {
+    color: #ffffff;
+    background: #4f46e5;
+    border: 1px solid #4f46e5;
+
+    box-shadow: 0 6px 14px rgba(79, 70, 229, 0.2);
+}
+
+.create-bootcamp-primary-button:hover:not(:disabled) {
+    background: #4338ca;
+    border-color: #4338ca;
+    transform: translateY(-1px);
+}
+
+.create-bootcamp-secondary-button:disabled,
+.create-bootcamp-primary-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Animations */
+
+@keyframes createBootcampFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes createBootcampSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes createBootcampContentIn {
+    from {
+        opacity: 0;
+        transform: translateX(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+    .create-bootcamp-backdrop {
+        align-items: flex-end;
+
+        padding: 0;
+    }
+
+    .create-bootcamp-modal {
+        width: 100%;
+        max-height: 96vh;
+
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+        border-radius: 22px 22px 0 0;
+    }
+
+    .create-bootcamp-header,
+    .create-bootcamp-content,
+    .create-bootcamp-footer {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .create-bootcamp-stepper {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .create-bootcamp-step small {
+        display: none;
+    }
+
+    .create-bootcamp-step-line {
+        margin: 0 12px;
+    }
+
+    .create-bootcamp-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .create-bootcamp-header {
+        padding-top: 20px;
+        padding-bottom: 18px;
+    }
+
+    .create-bootcamp-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .create-bootcamp-stepper {
+        align-items: flex-start;
+    }
+
+    .create-bootcamp-step {
+        gap: 7px;
+    }
+
+    .create-bootcamp-step strong {
+        font-size: 0.74rem;
+    }
+
+    .create-bootcamp-step-line {
+        margin-top: 14px;
+    }
+
+    .create-bootcamp-content {
+        padding-top: 22px;
+        padding-bottom: 28px;
+    }
+
+    .create-bootcamp-toggle-row {
+        gap: 14px;
+
+        padding: 16px;
+    }
+
+    .create-bootcamp-toggle-row p {
+        padding-right: 4px;
+
+        font-size: 0.74rem;
+    }
+
+    .create-bootcamp-footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .create-bootcamp-secondary-button,
+    .create-bootcamp-primary-button {
+        width: 100%;
+    }
+}

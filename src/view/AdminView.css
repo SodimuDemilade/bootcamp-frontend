@@ -1,0 +1,656 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Arial, sans-serif;
+}
+
+body {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.adminPageHeading {
+    margin-bottom: 24px;
+}
+
+.adminPageHeading h1 {
+    margin: 4px 0 6px;
+
+    color: #0f172a;
+    font-size: 2rem;
+}
+
+.adminPageHeading p {
+    font-size: 15px;
+}
+
+.adminPageHeading > div > p:last-child {
+    margin: 0;
+    color: #64748b;
+}
+
+.adminEyebrow {
+    margin: 0;
+
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.adminTabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+    margin-bottom: 28px;
+    padding: 5px;
+
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.adminTab {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 10px 16px;
+
+    color: #64748b;
+    background: transparent;
+    border: none;
+    border-radius: 9px;
+
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 650;
+
+    cursor: pointer;
+    transition: 160ms ease;
+    text-decoration: none;
+}
+
+.adminTab:hover {
+    color: #1e293b;
+}
+
+.adminTab.active {
+    color: #1d4ed8;
+    background: #ffffff;
+
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08),
+    0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+.adminTab span {
+    min-width: 24px;
+    padding: 2px 7px;
+
+    color: inherit;
+    background: #e2e8f0;
+    border-radius: 999px;
+
+    font-size: 0.72rem;
+    text-align: center;
+}
+
+.adminTab.active span {
+    background: #dbeafe;
+}
+
+.adminSection {
+    /*border: 10px solid;*/
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.adminSection p {
+    font-size: 15px;
+}
+
+.adminSection {
+    animation: adminSectionFade 180ms ease-out;
+}
+
+.tableHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.tableHeader h3 {
+    margin: 0 0 4px;
+    color: #1e293b;
+}
+
+.tableHeader p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.tableLoading,
+.tableEmptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 220px;
+    padding: 32px;
+
+    color: #64748b;
+    text-align: center;
+}
+
+.tableEmptyState h4 {
+    margin: 0 0 8px;
+    color: #1e293b;
+    font-size: 1.05rem;
+}
+
+.tableEmptyState p {
+    max-width: 420px;
+    margin: 0 0 20px;
+    line-height: 1.6;
+}
+
+.bootcampTableInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bootcampInitial {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 40px;
+    height: 40px;
+
+    color: #1d4ed8;
+    background: #dbeafe;
+    border-radius: 11px;
+
+    font-weight: 750;
+}
+
+.bootcampTableInfo strong,
+.bootcampTableInfo span {
+    display: block;
+}
+
+.bootcampTableInfo strong {
+    color: #1e293b;
+}
+
+.bootcampTableInfo span {
+    margin-top: 3px;
+    color: #94a3b8;
+    font-size: 0.78rem;
+}
+
+.courseCountBadge {
+    display: inline-flex;
+    justify-content: center;
+
+    min-width: 30px;
+    padding: 4px 9px;
+
+    color: #475569;
+    background: #f1f5f9;
+    border-radius: 999px;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.ratingValue {
+    color: #475569;
+    font-weight: 650;
+}
+
+@keyframes adminSectionFade {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.adminDashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #4f46e5;
+    margin-bottom: 40px;
+}
+
+.sidebarNav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.navItem {
+    padding: 12px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #64748b;
+    transition: 0.2s ease;
+}
+
+.navItem:hover {
+    background: #f1f5f9;
+}
+
+.navItem.active {
+    background: #eef2ff;
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.logout {
+    margin-top: auto;
+    color: #ef4444;
+    cursor: pointer;
+    padding: 12px 14px;
+}
+
+/* MAIN CONTENT */
+.adminMainContent {
+    flex: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* TOPBAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar h1 {
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.topbar p {
+    color: #64748b;
+}
+
+/* BUTTONS */
+.primaryBtn {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.primaryBtn:hover {
+    background: #4338ca;
+}
+
+.secondaryBtn {
+    background: #f1f5f9;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* METRICS */
+.metricsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.metricCard {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.metricCard p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.metricCard h2 {
+    margin-top: 8px;
+    font-size: 28px;
+}
+
+/* TABLE */
+.tableContainer {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.tableHeader {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.searchInput {
+    width: 300px;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+}
+
+.searchInput:focus {
+    border-color: #4f46e5;
+}
+
+.usersTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.usersTable th {
+    text-align: left;
+    background: #f8fafc;
+    padding: 16px;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.usersTable td {
+    padding: 16px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.usersTable tr:hover {
+    background: #fafafa;
+}
+
+/* USER INFO */
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #4f46e5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* BADGES */
+.roleBadge,
+.statusBadge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* ROLE COLORS */
+.roleBadge.admin {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.roleBadge.publisher {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.roleBadge.user {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+/* STATUS COLORS */
+.statusBadge.active {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.statusBadge.pending {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.statusBadge.suspended {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* ACTION BUTTONS */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.manageBtn {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.manageBtn:hover {
+    background: #15803d;
+}
+
+.editBtn {
+    background: #eef2ff;
+    color: #4f46e5;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.deleteBtn {
+    background: #fee2e2;
+    color: #dc2626;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ACTIVITY */
+.activityCard {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.activityCard h3 {
+    margin-bottom: 16px;
+}
+
+.activityItem {
+    padding: 12px 0;
+    border-top: 1px solid #f1f5f9;
+    color: #475569;
+}
+
+/* MODAL */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal {
+    width: 500px;
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.modalHeader button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.formGroup input,
+.formGroup select {
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+    border-color: #4f46e5;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .metricsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .usersTable {
+        /*min-width: 900px;*/
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    /*.tableContainer {*/
+    /*    overflow-x: auto;*/
+    /*}*/
+}
+
+@media (max-width: 768px) {
+    .adminDashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .metricsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .searchInput {
+        width: 100%;
+    }
+
+    .modal {
+        width: 90%;
+    }
+}
+
+@media (max-width: 700px) {
+    .adminTabs {
+        width: 100%;
+    }
+
+    .adminTab {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .topbar,
+    .tableHeader {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .topbar .primaryBtn {
+        width: 100%;
+    }
+}

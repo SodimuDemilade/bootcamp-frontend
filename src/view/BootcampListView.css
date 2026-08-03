@@ -1,0 +1,65 @@
+.bootcampList {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 15px;
+    height: 100%;
+    /*border: 10px solid red;*/
+}
+
+.filters {
+    border-radius: 16px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 87vh;
+    overflow: auto;
+    width: 25%;
+}
+
+.filterTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resetButton {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filterLabel {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bootcampListContent {
+    height: 87vh;
+    overflow: auto;
+    width: 75%;
+}
+
+.bootcamps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+    /*height: 80vh;*/
+    /*overflow: auto;*/
+}
+
+.guess-letter {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--primary);
+}
