@@ -9,5 +9,6 @@ export type RouteType = {
         // hasSideBar: boolean,
         subtitle: string
         isAuth?: boolean
+        role?: string
     }
 }

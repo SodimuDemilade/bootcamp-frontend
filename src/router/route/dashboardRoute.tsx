@@ -45,7 +45,8 @@ export const dashboardRoute: RouteType[] = [
         metadata: {
             isProtected: true,
             subtitle: "",
-            isAuth: false
+            isAuth: false,
+            role: "user"
         },
     },
     // {
@@ -85,7 +86,8 @@ export const dashboardRoute: RouteType[] = [
         metadata: {
             isProtected: true,
             subtitle: "",
-            isAuth: false
+            isAuth: false,
+            role: "publisher"
         },
     }
 ]
